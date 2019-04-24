@@ -4,7 +4,7 @@ import java.util.List;
 
 import dao.DaoFactory;
 import dao.ParticipacaoDao;
-import dao.impl.EM;
+import dao.Transaction;
 import dominio.Participacao;
 
 public class ParticipacaoServico {
@@ -16,15 +16,29 @@ public class ParticipacaoServico {
 	}
 	
 	public void inserirAtualizar(Participacao x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
+		try {
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch(RuntimeException e) {
+			if(Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 
 	public void excluir(Participacao x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
+		try {
+			Transaction.begin();
+			dao.excluir(x);
+			Transaction.commit();
+		} catch(RuntimeException e) {
+			if(Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 
 	public Participacao buscar(int cod) {
