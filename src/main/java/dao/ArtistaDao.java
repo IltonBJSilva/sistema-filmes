@@ -10,5 +10,6 @@ public interface ArtistaDao {
 	public void excluir(Artista x);
 	public Artista buscar(int cod);
 	public List<Artista> buscarTodos();
-	
+	public List<Artista> buscarTodosOrdenadosPorNome();
+	public Artista buscaNomeExato(String nome);
 }

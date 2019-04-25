@@ -17,6 +17,7 @@ import dominio.Participacao;
 import servico.ArtistaServico;
 import servico.FilmeServico;
 import servico.ParticipacaoServico;
+import servico.ServicoException;
 
 @WebServlet("/Instanciacao")
 public class Instanciacao extends HttpServlet {
@@ -60,7 +61,10 @@ public class Instanciacao extends HttpServlet {
 			response.getWriter().append("Pronto");
 		} catch (ParseException e) {
 			response.getWriter().append("Erro ao instanciar data. Instância não criada");
+		} catch (ServicoException e) {
+			response.getWriter().append("Erro!" + e.getMessage());
 		}
+		
 	}
 
 }
