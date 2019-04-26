@@ -48,7 +48,7 @@ public class ParticipacaoDaoImpl implements ParticipacaoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Participacao buscarExato(String personagem, Artista artista, Filme filme) {
-		String jpql = "SELECT x FROM Participacao x WHERE x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
+		String jpql = "SELECT x FROM Artista x WHERE x.nome = :p1";
 		Query query = em.createNamedQuery(jpql); 
 		//Setar os paramentro na query 
 		query.setParameter("p1", personagem);
@@ -62,7 +62,7 @@ public class ParticipacaoDaoImpl implements ParticipacaoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme) {
-		String jpql = "SELECT x FROM Participacao x WHERE x.getCodParticipacao <> :p0 AND x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
+		String jpql = "SELECT x FROM Artista x WHERE x.codArtista <> :p0 AND x.nome = :p1";
 		Query query = em.createNamedQuery(jpql); 
 		//Setar os paramentro na query 
 		query.setParameter("p0", codigo);
