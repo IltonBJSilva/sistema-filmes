@@ -53,10 +53,10 @@ public class Instanciacao extends HttpServlet {
 			as.inserirAtualizar(a2);
 			as.inserirAtualizar(a3);
 			
-			ps.inserirAtualizar(p1);
-			ps.inserirAtualizar(p2);
-			ps.inserirAtualizar(p3);
-			ps.inserirAtualizar(p4);
+			ps.inserir(p1);
+			ps.inserir(p2);
+			ps.inserir(p3);
+			ps.inserir(p4);
 			
 			response.getWriter().append("Pronto");
 		} catch (ParseException e) {
