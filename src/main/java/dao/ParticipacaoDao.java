@@ -14,5 +14,6 @@ public interface ParticipacaoDao {
 	public List<Participacao> buscarTodos();
 	
 	public Participacao buscarExato(String personagem, Artista artista, Filme filme);
-	
+	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme);
+
 }
