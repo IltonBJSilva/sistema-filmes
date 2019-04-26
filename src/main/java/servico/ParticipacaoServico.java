@@ -35,7 +35,13 @@ public class ParticipacaoServico {
 		}
 	}
 	
-	public void Atualizar(Participacao x) {
+	public void Atualizar(Participacao x) throws ServicoException{
+		//Fazer um teste se ja existir uma participação para buscar exatamente iguais
+		Participacao aux = dao.buscarExatoDiferente(x.getCodParticipacao(), x.getPersonagem(), x.getArtista(), x.getFilme());
+		if(aux != null) {
+			throw new ServicoException("Ja existe mesmo personagem cadastrado para o "
+					+ "artista: " + x.getArtista().getNome() + " no filme" + x.getFilme().getTitulo(),1);
+		}
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);
