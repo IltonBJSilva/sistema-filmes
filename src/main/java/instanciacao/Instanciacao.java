@@ -49,9 +49,9 @@ public class Instanciacao extends HttpServlet {
 			fs.inserirAtualizar(f1);
 			fs.inserirAtualizar(f2);
 			
-			as.inserirAtualizar(a1);
-			as.inserirAtualizar(a2);
-			as.inserirAtualizar(a3);
+			as.Atualizar(a1);
+			as.Atualizar(a2);
+			as.Atualizar(a3);
 			
 			ps.inserir(p1);
 			ps.inserir(p2);
