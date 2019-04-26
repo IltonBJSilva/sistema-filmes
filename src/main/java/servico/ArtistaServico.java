@@ -15,7 +15,25 @@ public class ArtistaServico {
 		dao = DaoFactory.criarArtistaDao();
 	}
 	
-	public void inserirAtualizar(Artista x) throws ServicoException {
+	public void inserir(Artista x) throws ServicoException {
+		try {
+			Artista aux = dao.buscaNomeExato(x.getNome());
+			if(aux != null) {
+				throw new ServicoException("Já existe um artista com esse nome!", 1);
+			}
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch(RuntimeException e) {
+			if(Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
+		
+	}
+	
+	public void Atualizar(Artista x) throws ServicoException {
 		try {
 			Artista aux = dao.buscaNomeExato(x.getNome());
 			if(aux != null) {
