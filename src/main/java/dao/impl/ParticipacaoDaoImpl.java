@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.ParticipacaoDao;
+import dominio.Artista;
+import dominio.Filme;
 import dominio.Participacao;
 
 public class ParticipacaoDaoImpl implements ParticipacaoDao {
@@ -41,6 +43,20 @@ public class ParticipacaoDaoImpl implements ParticipacaoDao {
 		String jpql = "SELECT x FROM Participacao x";
 		Query query = em.createNamedQuery(jpql); 
 		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Participacao buscarExato(String personagem, Artista artista, Filme filme) {
+		String jpql = "SELECT x FROM Participacao x WHERE x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
+		Query query = em.createNamedQuery(jpql); 
+		//Setar os paramentro na query 
+		query.setParameter("p1", personagem);
+		query.setParameter("p2", artista);
+		query.setParameter("p3", filme);
+		//Criar uma lista
+		List<Participacao> aux = query.getResultList();
+		return (aux.size() > 0 ) ? aux.get(0) : null;	
 	}
 
 }
