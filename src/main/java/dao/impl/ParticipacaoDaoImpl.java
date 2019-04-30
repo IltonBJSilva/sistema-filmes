@@ -12,10 +12,10 @@ import dominio.Participacao;
 
 public class ParticipacaoDaoImpl implements ParticipacaoDao {
 
-	private EntityManager em;
+	EntityManager em;
 	
 	public ParticipacaoDaoImpl() {
-		this.em = EM.getLocalEm();
+		em = EM.getLocalEm();
 	}
 	
 	@Override
@@ -41,39 +41,38 @@ public class ParticipacaoDaoImpl implements ParticipacaoDao {
 	@Override
 	public List<Participacao> buscarTodos() {
 		String jpql = "SELECT x FROM Participacao x";
-		Query query = em.createNamedQuery(jpql); 
+        Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Participacao buscarExato(String personagem, Artista artista, Filme filme) {
-		String jpql = "SELECT x FROM Artista x WHERE x.nome = :p1";
-		Query query = em.createNamedQuery(jpql); 
+		String jpql = "SELECT x FROM Participacao x WHERE x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
+		Query query = em.createQuery(jpql);
+		
 		//Setar os paramentro na query 
-		query.setParameter("p1", personagem);
-		query.setParameter("p2", artista);
-		query.setParameter("p3", filme);
-		//Criar uma lista
-		List<Participacao> aux = query.getResultList();
-		return (aux.size() > 0 ) ? aux.get(0) : null; 	
-	}
-	
-	@SuppressWarnings("unchecked")
-	@Override
-	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme) {
-		String jpql = "SELECT x FROM Artista x WHERE x.codArtista <> :p0 AND x.nome = :p1";
-		Query query = em.createNamedQuery(jpql); 
-		//Setar os paramentro na query 
-		query.setParameter("p0", codigo);
 		query.setParameter("p1", personagem);
 		query.setParameter("p2", artista);
 		query.setParameter("p3", filme);
 		
 		//Criar uma lista
 		List<Participacao> aux = query.getResultList();
-		return (aux.size() > 0 ) ? aux.get(0) : null; 	
+		return (aux.size() > 0) ? aux.get(0) : null;
 	}
-
-
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme) {
+		String jpql = "SELECT x FROM Participacao x WHERE x.codParticipacao <> :p0 x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
+		Query query = em.createQuery(jpql);
+		
+		query.setParameter("p0", codigo);
+		query.setParameter("p1", personagem);
+		query.setParameter("p2", artista);
+		query.setParameter("p3", filme);
+		
+		List<Participacao> aux = query.getResultList();
+		return (aux.size() > 0) ? aux.get(0) : null;
+	}
 }

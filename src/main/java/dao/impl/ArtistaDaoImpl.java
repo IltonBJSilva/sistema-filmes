@@ -60,4 +60,20 @@ public class ArtistaDaoImpl implements ArtistaDao {
 		List<Artista> aux = query.getResultList();
 		return (aux.size() > 0) ? aux.get(0) : null;
 	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public Artista buscaNomeExatoDiferente(Integer codigo, String nome) {
+		String jpql = "SELECT x FROM Artista x WHERE x.codArtista <> :p0 AND x.nome = :p1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("p1", nome);
+		query.setParameter("p0", codigo);
+		List<Artista> aux = query.getResultList();
+		return (aux.size() > 0) ? aux.get(0) : null;
+	}
+
+	@Override
+	public List<Artista> buscarPorNome(String trecho) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

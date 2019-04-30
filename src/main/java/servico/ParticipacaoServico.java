@@ -20,7 +20,7 @@ public class ParticipacaoServico {
 		Participacao aux = dao.buscarExato(x.getPersonagem(), x.getArtista(), x.getFilme());
 		if(aux != null) {
 			throw new ServicoException("Ja existe mesmo personagem cadastrado para o "
-					+ "artista: " + x.getArtista().getNome() + " no filme" + x.getFilme().getTitulo(),1);
+					+ "artista: " + x.getArtista().getNome() + " no filme " + x.getFilme().getTitulo(),1);
 		}
 		
 		try {

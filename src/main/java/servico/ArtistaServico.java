@@ -35,7 +35,7 @@ public class ArtistaServico {
 	
 	public void Atualizar(Artista x) throws ServicoException {
 		try {
-			Artista aux = dao.buscaNomeExato(x.getNome());
+			Artista aux = dao.buscaNomeExatoDiferente(x.getCodArtista(), x.getNome());
 			if(aux != null) {
 				throw new ServicoException("Já existe um artista com esse nome!", 1);
 			}
