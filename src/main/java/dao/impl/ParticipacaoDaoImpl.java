@@ -63,16 +63,17 @@ public class ParticipacaoDaoImpl implements ParticipacaoDao {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme) {
-		String jpql = "SELECT x FROM Participacao x WHERE x.codParticipacao <> :p0 x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
-		Query query = em.createQuery(jpql);
+	public Participacao buscarExatoDiferente (Integer codigo, String personagem, Artista artista, Filme filme) {
+		String jpql = "SELECT x FROM Participacao x WHERE x.codParticipacao <> :p0 AND x.personagem = :p1 AND x.artista = :p2 AND x.filme = :p3";
 		
+		Query query = em.createQuery(jpql);
 		query.setParameter("p0", codigo);
 		query.setParameter("p1", personagem);
 		query.setParameter("p2", artista);
 		query.setParameter("p3", filme);
 		
 		List<Participacao> aux = query.getResultList();
+		
 		return (aux.size() > 0) ? aux.get(0) : null;
 	}
 }
