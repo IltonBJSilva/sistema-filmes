@@ -76,4 +76,8 @@ public class ArtistaServico {
 		return dao.buscarTodosOrdenadosPorNome();
 	}
 	
+	public List<Artista> buscarPorNome(String trecho){
+			return dao.buscarPorNome(trecho);
+	}
+	
 }
