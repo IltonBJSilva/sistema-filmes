@@ -1,13 +1,13 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Artista &middot; Twitter Bootstrap</title>
 
 <link
@@ -53,7 +53,7 @@
 					<th>Nacionalidade</th>
 					<th>Cache</th>
 					<th>nascimento</th>
-					<th>AÃ§Ã£o</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 			<tbody>

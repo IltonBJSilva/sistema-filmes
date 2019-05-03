@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Tecnofilmes &middot; Twitter Bootstrap</title>
 
 <link
@@ -23,12 +23,12 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Tecnofilmes para vocÃª</h1>
+			<h1>Tecnofilmes para você</h1>
 		</div>
 		<p class="lead">
 			O melhor filme com a melhor qualidade do mercado para assistir
 			<code>INICIAR</code>
-			nÃ£o vai querer largar e temos lista de artista e suas participaÃ§Ãµes
+			não vai querer largar e temos lista de artista e suas participações
 			veja oque cada um deles foi em cada filme e cadastre um novo
 		</p>
 		<p>
