@@ -121,7 +121,7 @@ public class Participacao implements Serializable{
 		return true;
 	}
 	
-	public BigDecimal cachePago() {
+	public BigDecimal getCachePago() {
 		return artista.getCache().subtract(desconto);
 	}
 	
