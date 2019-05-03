@@ -9,19 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dominio.Artista;
+import servico.ArtistaServico;
 
-@WebServlet("/artista/novo")
-public class ArtistaNovo extends HttpServlet {
+@WebServlet("/artista/editar")
+public class ArtistaEditar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private static String DESTINO = "/artista/formInserir.jsp";
+	private static String DESTINO = "/artista/formEditar.jsp";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		ArtistaServico as = new ArtistaServico();
 		
+		int cod = Integer.parseInt(request.getParameter("cod"));
+		Artista art = as.buscar(cod);
 		
 		// setou o atributo com apelido de itens
-		request.setAttribute("item",  new Artista());
+		request.setAttribute("item", art);
 		// encaminhou
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 	}
