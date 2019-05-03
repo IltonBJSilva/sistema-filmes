@@ -30,6 +30,16 @@
 			action="<%=request.getContextPath()%>/artista/inserir">
 
 			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<ul>
+						<c:forEach items="${erros}" var="msg">
+							<li class="erro">${msg}</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</div>
+
+			<div class="form-group">
 				<label class="col-sm-2 control-label" for="codArtista">Nome:</label>
 				<div class="col-sm-5">
 					<input type="text" name="nome" id="nome" value="${item.nome}"
@@ -59,7 +69,7 @@
 				<label class="col-sm-2 control-label" for="codArtista">Nascimento:</label>
 				<div class="col-sm-5">
 					<input type="text" name="nascimento" id="nascimento"
-						value="<fmt:formatDate pattern="dd/MM/yyyy" value="${item.nascimento}"/>"
+						value="<fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${item.nascimento}"/>"
 						required="required" class="form-control" />
 				</div>
 			</div>
@@ -75,10 +85,7 @@
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 	<!-- CORE JS -->
-	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"
-		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-		crossorigin="anonymous"></script>
-	<script
-		src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
