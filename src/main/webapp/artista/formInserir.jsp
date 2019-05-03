@@ -26,7 +26,7 @@
 			<h1>Inserir um novo</h1>
 		</div>
 
-		<form name="myform" class="form-horizontal"
+		<form method="post" name="myform" class="form-horizontal"
 			action="<%=request.getContextPath()%>/artista/inserir">
 
 			<div class="form-group">
