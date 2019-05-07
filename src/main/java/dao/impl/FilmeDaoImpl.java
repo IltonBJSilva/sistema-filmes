@@ -45,7 +45,7 @@ public class FilmeDaoImpl implements FilmeDao {
 	@Override
 	public List<Filme> buscarTodos() {
 		String jpql = "SELECT x FROM Filme x";
-		Query query = em.createNamedQuery(jpql); 
+		Query query = em.createQuery(jpql); 
 		return query.getResultList();
 	}
 
