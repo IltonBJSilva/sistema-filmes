@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dominio.Artista;
 import servico.ArtistaServico;
-import servico.ServicoException;
 
 @WebServlet("/artista/excluir")
 public class ArtistaExcluir extends HttpServlet {

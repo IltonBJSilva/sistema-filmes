@@ -18,7 +18,7 @@
 				<li class="active"><a href="index.jsp">Inicio</a></li>
 				<li><a href="<%=request.getContextPath()%>/artista/listar">Cadastro
 						de artista</a></li>
-				<li><a href="<%=request.getContextPath()%>/filmes/pesquisar">Pesquisar
+				<li><a href="<%=request.getContextPath()%>/filme/pesquisar">Pesquisar
 						filmes</a></li>
 				<li><a href="<%=request.getContextPath()%>/participacao/filmes">Inserir
 						participação</a></li>

@@ -128,7 +128,7 @@ public class Filme implements Serializable{
 	public BigDecimal getCacheTotal() {
 		BigDecimal soma = new BigDecimal("0.20");
 		for (Participacao p : participacoes) {
-			soma = soma.add(p.cachePago());
+			soma = soma.add(p.getCachePago());
 		}
 		return soma;
 	}
