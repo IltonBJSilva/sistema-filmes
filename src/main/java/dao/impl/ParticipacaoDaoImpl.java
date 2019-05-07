@@ -1,7 +1,7 @@
 /*
  Nome do autor: Ilton Batista da Silva Júnior
  Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa:
+ Objetivo sucinto do programa: Class de implementação da manipulação de dados da participação
  Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
  */
 package dao.impl;

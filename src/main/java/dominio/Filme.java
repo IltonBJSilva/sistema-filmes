@@ -19,18 +19,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_filme")
-public class Filme implements Serializable{
+@Table(name = "tb_filme")
+public class Filme implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codFilme;
 	private String titulo;
 	private Integer duracao;
 	private Integer ano;
-	
-	@OneToMany(mappedBy="filme")
+
+	@OneToMany(mappedBy = "filme")
 	private List<Participacao> participacoes;
 
 	public Filme() {
@@ -85,12 +85,12 @@ public class Filme implements Serializable{
 	public void setParticipacoes(List<Participacao> participacoes) {
 		this.participacoes = participacoes;
 	}
-	
+
 	public void addParticipacao(Participacao x) {
 		this.participacoes.add(x);
 		x.setFilme(this);
 	}
-	
+
 	public void removeParticipacao(Participacao x) {
 		this.participacoes.remove(x);
 	}
@@ -124,7 +124,7 @@ public class Filme implements Serializable{
 			return false;
 		return true;
 	}
-	
+
 	public BigDecimal getCacheTotal() {
 		BigDecimal soma = new BigDecimal("0.20");
 		for (Participacao p : participacoes) {

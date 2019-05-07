@@ -1,3 +1,9 @@
+/*
+ Nome do autor: Ilton Batista da Silva Júnior
+ Data de criação do arquivo: 10/04/2019
+ Objetivo sucinto do programa: Exceção personalizada de validação
+ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
+ */
 package servico;
 
 import java.util.List;

@@ -1,3 +1,10 @@
+/*
+ Nome do autor: Ilton Batista da Silva Júnior
+ Data de criação do arquivo: 10/04/2019
+ Objetivo sucinto do programa: Service que chama o dao de Artista e realiza a validação
+ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
+ */
+
 package servico;
 
 import java.util.ArrayList;

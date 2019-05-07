@@ -1,7 +1,7 @@
 /*
  Nome do autor: Ilton Batista da Silva Júnior
  Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa:  Interface DAO que apresenta os métodos obritatórios em relação a classe Artistapackage dao;
+ Objetivo sucinto do programa:  Interface DAO que apresenta os métodos obritatórios em relação a classe Artista;
  Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
  */
 
