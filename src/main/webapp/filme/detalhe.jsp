@@ -14,6 +14,12 @@
 	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
 	rel="stylesheet">
 </head>
+<!--
+Nome do autor: Ilton Batista da Silva Júnior
+Data de criação do arquivo: 11/04/2019
+Objetivo sucinto do programa: pagina que mostra os detalhes do filme.
+Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
+-->
 
 <body>
 
