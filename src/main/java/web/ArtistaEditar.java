@@ -27,10 +27,10 @@ public class ArtistaEditar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ArtistaServico as = new ArtistaServico();
-		
+
 		int cod = Integer.parseInt(request.getParameter("cod"));
 		Artista art = as.buscar(cod);
-		
+
 		// setou o atributo com apelido de itens
 		request.setAttribute("item", art);
 		// encaminhou

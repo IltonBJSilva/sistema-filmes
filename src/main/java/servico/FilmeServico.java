@@ -21,14 +21,14 @@ public class FilmeServico {
 	public FilmeServico() {
 		dao = DaoFactory.criarFilmeDao();
 	}
-	
+
 	public void inserirAtualizar(Filme x) {
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();
-		} catch(RuntimeException e) {
-			if(Transaction.isActive()) {
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
 				Transaction.rollback();
 			}
 			System.out.println("Erro: " + e.getMessage());
@@ -40,8 +40,8 @@ public class FilmeServico {
 			Transaction.begin();
 			dao.excluir(x);
 			Transaction.commit();
-		} catch(RuntimeException e) {
-			if(Transaction.isActive()) {
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
 				Transaction.rollback();
 			}
 			System.out.println("Erro: " + e.getMessage());
@@ -55,8 +55,8 @@ public class FilmeServico {
 	public List<Filme> buscarTodos() {
 		return dao.buscarTodos();
 	}
-	
-	public List<Filme> buscarPorNomeAno(String nome, int anoMin, int anoMax){
+
+	public List<Filme> buscarPorNomeAno(String nome, int anoMin, int anoMax) {
 		return dao.buscarPorNomeAno(nome, anoMin, anoMax);
 	}
 }

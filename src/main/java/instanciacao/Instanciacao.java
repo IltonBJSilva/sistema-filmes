@@ -47,30 +47,30 @@ public class Instanciacao extends HttpServlet {
 			Participacao p2 = new Participacao(null, "Howard Hughes", new BigDecimal("1000000.00"), f1, a1);
 			Participacao p3 = new Participacao(null, "Rose Bukater", new BigDecimal("1000000.00"), f2, a3);
 			Participacao p4 = new Participacao(null, "Katherine Hepburn", new BigDecimal("500000.00"), f1, a2);
-			
+
 			ArtistaServico as = new ArtistaServico();
 			FilmeServico fs = new FilmeServico();
 			ParticipacaoServico ps = new ParticipacaoServico();
-			
+
 			fs.inserirAtualizar(f1);
 			fs.inserirAtualizar(f2);
-			
+
 			as.Atualizar(a1);
 			as.Atualizar(a2);
 			as.Atualizar(a3);
-			
+
 			ps.inserir(p1);
 			ps.inserir(p2);
 			ps.inserir(p3);
 			ps.inserir(p4);
-			
+
 			response.getWriter().append("Pronto");
 		} catch (ParseException e) {
 			response.getWriter().append("Erro ao instanciar data. Instância não criada");
 		} catch (ServicoException e) {
 			response.getWriter().append("Erro!" + e.getMessage());
 		}
-		
+
 	}
 
 }

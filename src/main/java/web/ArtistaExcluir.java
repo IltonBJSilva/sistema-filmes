@@ -27,15 +27,15 @@ public class ArtistaExcluir extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		ArtistaServico as = new ArtistaServico();
 		int cod = Integer.parseInt(request.getParameter("cod"));
 		Artista art = as.buscar(cod);
-		
+
 		try {
-			//Excluir
+			// Excluir
 			as.excluir(art);
-			
+
 			List<Artista> itens = as.buscarTodosOrdenadosPorNome();
 			// setou o atributo com apelido de itens
 			request.setAttribute("itens", itens);

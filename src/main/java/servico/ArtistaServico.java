@@ -22,68 +22,66 @@ public class ArtistaServico {
 	public ArtistaServico() {
 		dao = DaoFactory.criarArtistaDao();
 	}
-	
-	
-	public void validar(Artista x) throws ValidacaoException{
+
+	public void validar(Artista x) throws ValidacaoException {
 		List<String> erros = new ArrayList<>();
-		
-		if(x.getNome() == null) {
+
+		if (x.getNome() == null) {
 			erros.add("Favor preencher o campo nome");
 		}
-	
-		if(x.getNacionalidade() == null) {
+
+		if (x.getNacionalidade() == null) {
 			erros.add("Favor preencher o campo nacionalidade");
 		}
-		
-		if(x.getCache() == null) {
+
+		if (x.getCache() == null) {
 			erros.add("Favor preencher o campo cache");
 		}
-		
-		if(x.getNascimento() == null) {
+
+		if (x.getNascimento() == null) {
 			erros.add("Favor preencher o campo nascimento");
 		}
-		
-		if(!erros.isEmpty()) {
-			throw new ValidacaoException("Erro de validação",erros);
+
+		if (!erros.isEmpty()) {
+			throw new ValidacaoException("Erro de validação", erros);
 		}
-		
 
 	}
-	
+
 	public void inserir(Artista x) throws ServicoException {
 		try {
 			Artista aux = dao.buscaNomeExato(x.getNome());
-			if(aux != null) {
+			if (aux != null) {
 				throw new ServicoException("Já existe um artista com esse nome!", 1);
 			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();
-		} catch(RuntimeException e) {
-			if(Transaction.isActive()) {
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
 				Transaction.rollback();
 			}
 			System.out.println("Erro: " + e.getMessage());
 		}
-		
+
 	}
-	
+
 	public void Atualizar(Artista x) throws ServicoException {
 		try {
 			Artista aux = dao.buscaNomeExatoDiferente(x.getCodArtista(), x.getNome());
-			if(aux != null) {
+			if (aux != null) {
 				throw new ServicoException("Já existe um artista com esse nome!", 1);
 			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();
-		} catch(RuntimeException e) {
-			if(Transaction.isActive()) {
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
 				Transaction.rollback();
 			}
 			System.out.println("Erro: " + e.getMessage());
 		}
-		
+
 	}
 
 	public void excluir(Artista x) {
@@ -91,8 +89,8 @@ public class ArtistaServico {
 			Transaction.begin();
 			dao.excluir(x);
 			Transaction.commit();
-		} catch(RuntimeException e) {
-			if(Transaction.isActive()) {
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
 				Transaction.rollback();
 			}
 			System.out.println("Erro: " + e.getMessage());
@@ -106,13 +104,13 @@ public class ArtistaServico {
 	public List<Artista> buscarTodos() {
 		return dao.buscarTodos();
 	}
-	
+
 	public List<Artista> buscarTodosOrdenadosPorNome() {
 		return dao.buscarTodosOrdenadosPorNome();
 	}
-	
-	public List<Artista> buscarPorNome(String trecho){
-			return dao.buscarPorNome(trecho);
+
+	public List<Artista> buscarPorNome(String trecho) {
+		return dao.buscarPorNome(trecho);
 	}
-	
+
 }

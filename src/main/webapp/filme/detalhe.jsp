@@ -31,8 +31,9 @@
 				<li class="list-group-item">Titulo: ${item.titulo}</li>
 				<li class="list-group-item">Duração: ${item.duracao}</li>
 				<li class="list-group-item">Ano: ${item.ano}</li>
-				<li class="list-group-item">Gasto total em cache: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
-						type="currency" value="${item.cacheTotal}" /></li>
+				<li class="list-group-item">Gasto total em cache: <fmt:setLocale
+						value="pt_BR" /> <fmt:formatNumber type="currency"
+						value="${item.cacheTotal}" /></li>
 			</ul>
 		</div>
 

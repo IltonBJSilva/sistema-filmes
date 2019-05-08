@@ -26,7 +26,7 @@ public class FilmeDetalhes extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		FilmeServico fs = new FilmeServico();
 		int cod = Integer.parseInt(request.getParameter("cod"));
 		Filme filme = fs.buscar(cod);
