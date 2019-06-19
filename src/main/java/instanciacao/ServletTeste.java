@@ -1,12 +1,7 @@
-/*
- Nome do autor: Ilton Batista da Silva Júnior
- Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa: class que testa os metodos e as exceções
- Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
- */
 package instanciacao;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -25,8 +20,8 @@ import servico.ParticipacaoServico;
 public class ServletTeste extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			sdf.parse("01/01/2000");
@@ -34,68 +29,88 @@ public class ServletTeste extends HttpServlet {
 			ArtistaServico as = new ArtistaServico();
 			FilmeServico fs = new FilmeServico();
 			ParticipacaoServico ps = new ParticipacaoServico();
-			/*
-			 * //Tentando inserir um artista com nome repetido
-			 * 
-			 * Artista a1 = new Artista(null, "Leonardo Di Caprio", "EUA", new
-			 * BigDecimal("10000000.00"),sdf.parse("11/11/1971")); try { as.inserir(a1);
-			 * response.getWriter().append("Inserido "+a1.getNome()); }finally {
-			 * 
-			 * } }catch() { response.getWriter().append("Erro: "+ e.getMessage()+"\n"); }
-			 */
-			/*
-			 * //Tentando atualizar Artista Artista a1 = as.buscar(1);
-			 * response.getWriter().append("FORA DO TRY\n"); try {
-			 * a1.setCache(a1.getCache().add(new BigDecimal("4.00"))); as.Atualizar(a1);
-			 * response.getWriter().append("Artista atualizado!\n"); }
-			 * catch(ServicoException e) { response.getWriter().append(e.getMessage() +
-			 * "\nCATCH \n"); } }
-			 */
 
-			/*
-			 * // Tentando atualizar o nome de um artista(2) Artista a2 = as.buscar(2); try
-			 * { a2.setNome("Peter Parker"); as.Atualizar(a2);
-			 * response.getWriter().append("Artista atualizado\n"); }catch(ServicoException
-			 * e) { response.getWriter().append(e.getMessage()+"\n");
-			 * 
-			 * }
-			 */
+/*
+			// Tentando inserir um artista com nome repetido:
+			
+			Artista a1 = new Artista(null, "Leonardo Di Caprio", "US", new BigDecimal("2000000.00"), sdf.parse("20/03/2016"));
+			try {
+				as.inserir(a1);
+				response.getWriter().append("Leonardo Di Caprio inserido!\n");
+			}
+			catch (ServicoException e) {
+				response.getWriter().append(e.getMessage()+"\n");
+			}
+*/			
 
-			/*
-			 * //Tentando inserir uma participação não repetida: Filme f1 = fs.buscar(2);
-			 * Artista a1 = as.buscar(1);
-			 * 
-			 * Participacao p = new Participacao(null, "Joaozinho", new
-			 * BigDecimal("0.00"),f1,a1); try { ps.inserir(p);
-			 * response.getWriter().append("Participação inserida!!\n");
-			 * }catch(ServicoException e) { response.getWriter().append(e.getMessage()); }
-			 */
+			
+/*
+			// Tentando atualizar um artista (1):
+			Artista a1 = as.buscar(1);
+			try {
+				a1.setCache(a1.getCache().add(new BigDecimal("1.00")));
+				as.atualizar(a1);
+				response.getWriter().append("Artista atualizado!\n");
+			}
+			catch (ServicoException e) {
+				response.getWriter().append(e.getMessage()+"\n");
+			}
+*/
+/*			
 
-			/*
-			 * //Tentando inserir uma participação repetida: Filme f1 = fs.buscar(2);
-			 * Artista a1 = as.buscar(1);
-			 * 
-			 * Participacao p = new Participacao(null, "Jack Dawson", new
-			 * BigDecimal("0.00"),f1,a1); try { ps.inserir(p);
-			 * response.getWriter().append("Participação inserida!!\n");
-			 * }catch(ServicoException e) { response.getWriter().append(e.getMessage()); }
-			 */
-
-			// Realizar a consulta de filmes:
-			List<Filme> lista = fs.buscarPorNomeAno("a", 1997, 2010);
-			for (Filme x : lista) {
-				response.getWriter().append(x + "\n");
-				response.getWriter().append("\n\n");
-				as.buscarTodos();
-				response.getWriter().append("\n\n");
-				fs.buscarTodos();
-				response.getWriter().append("\n\n");
-				ps.buscarTodos();
+			// Tentando atualizar um artista (2):
+			Artista a1 = as.buscar(1);
+			try {
+				a1.setNome("Cate Blanchett");
+				as.atualizar(a1);
+				response.getWriter().append("Artista atualizado!\n");
+			}
+			catch (ServicoException e) {
+				response.getWriter().append(e.getMessage()+"\n");
 			}
 
-		} catch (Exception e) {
-			response.getWriter().append(e.getMessage() + "CATCH 2 \n");
+*/		
+/*			
+			// Tentando inserir uma participacao nao repetida:
+			
+			Filme f1 = fs.buscar(2);
+			Artista a1 = as.buscar(1);
+			Participacao p = new Participacao(null, "Joaozinho", new BigDecimal("0.00"), f1, a1);
+			try {
+				ps.inserir(p);
+				response.getWriter().append("Participacao inserida!\n");
+			}
+			catch (ServicoException e) {
+				response.getWriter().append(e.getMessage());
+			}
+		
+*/
+/*			
+			// Tentando inserir uma participacao repetida:
+			
+			Filme f1 = fs.buscar(2);
+			Artista a1 = as.buscar(1);
+			Participacao p = new Participacao(null, "Jack Dawson", new BigDecimal("0.00"), f1, a1);
+			try {
+				ps.inserir(p);
+				response.getWriter().append("Participacao inserida!\n");
+			}
+			catch (ServicoException e) {
+				response.getWriter().append(e.getMessage());
+			}
 
+*/			
+
+			// Realizando a consulta de filmes:
+			List<Filme> lista = fs.buscarPorNomeAno("o", 1997, 2010);
+			for (Filme x : lista) {
+				response.getWriter().append(x + "\n");
+			}
+			
+			
+		}
+		catch (ParseException e) {
+			response.getWriter().append("Data inválida!");
 		}
 	}
 }

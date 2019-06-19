@@ -1,10 +1,3 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: pagina jsp form que lista os filmes apos inserir uma participação.
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -35,9 +28,9 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Codigo</th>
-					<th>Titulo</th>
-					<th>Duracao</th>
+					<th>Código</th>
+					<th>Título</th>
+					<th>Duração</th>
 					<th>Ano</th>
 					<th>Ação</th>
 				</tr>

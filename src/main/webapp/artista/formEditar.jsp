@@ -1,31 +1,23 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: pagina jsp de Form para editar o o artista.
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Editar artista &middot; Twitter Bootstrap</title>
-
+<title>Sistema de Filmes</title>
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="<%=request.getContextPath()%>	/resources/css/sticky-footer-navbar.css"
+	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
 	rel="stylesheet">
 </head>
+
 <body>
 
-	<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
+	<jsp:include page="/resources/templates/navbar.jsp" />
 
 	<!-- Begin page content -->
 	<div class="container">
@@ -47,24 +39,22 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="codArtista">Codigo:</label>
+				<label class="col-sm-2 control-label" for="codArtista">Código:</label>
 				<div class="col-sm-5">
 					<input type="text" name="codArtista" id="codArtista" value="${item.codArtista}"
 						required="required" readonly="readonly" class="form-control" />
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Nome:</label>
 				<div class="col-sm-5">
-					<input type="text" name="nome" id="nome"
-						value="${item.nome}" required="required"
-						class="form-control" />
+					<input type="text" name="nome" id="nome" value="${item.nome}"
+						required="required" class="form-control" />
 				</div>
 			</div>
-
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="codArtista">Nacionalidade:</label>
+				<label class="col-sm-2 control-label" for="nacionalidade">Nacionalidade:</label>
 				<div class="col-sm-5">
 					<input type="text" name="nacionalidade" id="nacionalidade"
 						value="${item.nacionalidade}" required="required"
@@ -72,20 +62,17 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 				</div>
 			</div>
 			<div class="form-group">
-
-				<label class="col-sm-2 control-label" for="codArtista">Cache:</label>
+				<label class="col-sm-2 control-label" for="cache">Cache:</label>
 				<div class="col-sm-5">
 					<input type="text" name="cache" id="cache" value="${item.cache}"
 						required="required" class="form-control" />
 				</div>
 			</div>
-
 			<div class="form-group">
-
-				<label class="col-sm-2 control-label" for="codArtista">Nascimento:</label>
+				<label class="col-sm-2 control-label" for="nascimento">Nascimento:</label>
 				<div class="col-sm-5">
 					<input type="text" name="nascimento" id="nascimento"
-						value="<fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${item.nascimento}"/>"
+						value="<fmt:formatDate pattern="dd/MM/yyyy" value="${item.nascimento}"/>"
 						required="required" class="form-control" />
 				</div>
 			</div>
@@ -100,8 +87,10 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
-	<!-- CORE JS -->
+
+	<!-- Core JS -->
 	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
-    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

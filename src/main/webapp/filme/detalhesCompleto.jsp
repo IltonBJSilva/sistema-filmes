@@ -1,10 +1,3 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: mostra os detalhes completo de filmes de maneira organizada.
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -34,9 +27,9 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 
 		<div>
 			<ul class="list-group">
-				<li class="list-group-item">Codigo: ${item.codFilme}</li>
-				<li class="list-group-item">Titulo: ${item.titulo}</li>
-				<li class="list-group-item">Duracao: ${item.duracao}</li>
+				<li class="list-group-item">Código: ${item.codFilme}</li>
+				<li class="list-group-item">Título: ${item.titulo}</li>
+				<li class="list-group-item">Duração: ${item.duracao}</li>
 				<li class="list-group-item">Ano: ${item.ano}</li>
 				<li class="list-group-item">Gasto total em cache: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
 						type="currency" value="${item.cacheTotal}" /></li>
@@ -46,7 +39,7 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 
 	<div class="container">
 		<div class="page-header">
-			<h2>Participaçoes</h2>
+			<h2>Participações</h2>
 		</div>
 
 		<div>

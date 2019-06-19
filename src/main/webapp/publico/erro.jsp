@@ -1,43 +1,31 @@
-<!--  
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criaÃ§Ã£o do arquivo: 10/04/2019 
-Objetivo sucinto do programa: Template de página padrão de erro
-Referencia ao enunciado/origem do exercicio: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
-<!-- Corresponde a uma página completa padrão/modelo -->
-<%@ page language="java" contentType="text/html; charsert=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Sistema de Filmes</title>
-	<link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>Sistema de Filme</title>
+    <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
+  </head>
 
-<body>
+  <body>
 
-	<jsp:include page="/resources/templates/navbar.jsp"/>
+	<jsp:include page="/resources/templates/navbar.jsp" />
 
-	<!-- Conteúdo da página -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Erro!</h1>
-		</div>
-		<p class="lead">
-		${msg}
-		</p>
-	</div>
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Erro!</h1>
+      </div>
+      <p class="lead">${msg}</p>
+    </div>
 
-	<jsp:include page="/resources/templates/rodape.jsp"/>
+	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
-	<!-- Core JS (Corresponde ao núcleo de processamento do JavaScript)-->
-	<!-- Conta com as bibliotecas do bootstrap e do jquery -->
-	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
-</body>
+    <!-- Core JS -->
+    <script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+  </body>
 </html>

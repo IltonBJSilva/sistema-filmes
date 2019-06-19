@@ -1,10 +1,3 @@
-/*
- Nome do autor: Ilton Batista da Silva Júnior
- Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa:  Interface DAO que apresenta os métodos obritatórios em relação a classe Participacao;
- Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
- */
-
 package dao;
 
 import java.util.List;
@@ -22,5 +15,4 @@ public interface ParticipacaoDao {
 	
 	public Participacao buscarExato(String personagem, Artista artista, Filme filme);
 	public Participacao buscarExatoDiferente(Integer codigo, String personagem, Artista artista, Filme filme);
-
 }

@@ -1,10 +1,3 @@
-/*
- Nome do autor: Ilton Batista da Silva Júnior
- Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa: servlet que valida e atualiza um artista.
- Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
- */
-
 package web;
 
 import java.io.IOException;
@@ -28,20 +21,16 @@ public class ArtistaAtualizar extends HttpServlet {
 	private static String DESTINO = "/artista/listar.jsp";
 	private static String FORM = "/artista/formEditar.jsp";
 	private static String ERRO = "/publico/erro.jsp";
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		ArtistaServico as = new ArtistaServico();
 		Artista x = Instanciar.artista(request);
 		try {
-			// Antes de inserir precisa validar
 			as.validar(x);
-			// Atualiza os dados de um artista
-			as.Atualizar(x);
+			as.atualizar(x);
 			List<Artista> itens = as.buscarTodosOrdenadosPorNome();
-			// setou o atributo com apelido de itens
 			request.setAttribute("itens", itens);
-			// encaminhou
 			request.getRequestDispatcher(DESTINO).forward(request, response);
 		} catch (ServicoException e) {
 			request.setAttribute("msg", e.getMessage());

@@ -1,47 +1,32 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: templete das paginas
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Titulo da pagina &middot; Twitter Bootstrap</title>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>Sistema de Filmes</title>
+    <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
+  </head>
 
-<link
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>	/resources/css/sticky-footer-navbar.css"
-	rel="stylesheet">
-</head>
-<body>
+  <body>
 
-<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
+	<jsp:include page="/resources/templates/navbar.jsp" />
 
-	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>TITULO</h1>
-		</div>
-		<p class="lead">Texto grande</p>
-		<p>Texto menor</p>
-	</div>
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Título da página</h1>
+      </div>
+      <p class="lead">Texto grande</p>
+      <p>Texto menor</p>
+    </div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
-	<!-- CORE JS -->
-	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"
-		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-		crossorigin="anonymous"></script>
-	<script
-		src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
-</body>
+
+    <!-- Core JS -->
+    <script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+  </body>
 </html>

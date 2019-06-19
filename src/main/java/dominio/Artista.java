@@ -1,9 +1,3 @@
-/*
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 10/04/2019
-Objetivo sucinto do programa: Cria uma classe Artista com respectivos dados
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
-*/
 package dominio;
 
 import java.io.Serializable;
@@ -21,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tb_artista")
-public class Artista implements Serializable{
+public class Artista implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -34,7 +28,7 @@ public class Artista implements Serializable{
 	
 	@OneToMany(mappedBy="artista")
 	private List<Participacao> participacoes;
-
+	
 	public Artista() {
 		participacoes = new ArrayList<>();
 	}
@@ -101,7 +95,7 @@ public class Artista implements Serializable{
 		this.participacoes.add(x);
 		x.setArtista(this);
 	}
-	
+
 	public void removeParticipacao(Participacao x) {
 		this.participacoes.remove(x);
 	}
@@ -136,5 +130,7 @@ public class Artista implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
 	
 }

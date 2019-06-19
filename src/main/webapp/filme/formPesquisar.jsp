@@ -1,10 +1,3 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: pagina jsp form que realiza a pesquisa de um filme.
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -36,14 +29,14 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 			action="<%=request.getContextPath()%>/filme/resultado">
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="titulo">Titulo:</label>
+				<label class="col-sm-2 control-label" for="titulo">Título:</label>
 				<div class="col-sm-5">
 					<input type="text" name="titulo" id="titulo" value=""
 						class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="anoMin">Ano minimo:</label>
+				<label class="col-sm-2 control-label" for="anoMin">Ano mínimo:</label>
 				<div class="col-sm-5">
 					<input type="number" name="anoMin" id="anoMin"
 						value="" required="required"
@@ -51,7 +44,7 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="anoMax">Ano maximo:</label>
+				<label class="col-sm-2 control-label" for="anoMax">Ano máximo:</label>
 				<div class="col-sm-5">
 					<input type="number" name="anoMax" id="anoMax"
 						value="" required="required"

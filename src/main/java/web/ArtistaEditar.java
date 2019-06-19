@@ -1,10 +1,3 @@
-/*
- Nome do autor: Ilton Batista da Silva Júnior
- Data de criação do arquivo: 10/04/2019
- Objetivo sucinto do programa: servlet que edita um artista.
- Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
- */
-
 package web;
 
 import java.io.IOException;
@@ -23,17 +16,13 @@ public class ArtistaEditar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static String DESTINO = "/artista/formEditar.jsp";
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		ArtistaServico as = new ArtistaServico();
-
 		int cod = Integer.parseInt(request.getParameter("cod"));
 		Artista art = as.buscar(cod);
-
-		// setou o atributo com apelido de itens
 		request.setAttribute("item", art);
-		// encaminhou
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 	}
 }

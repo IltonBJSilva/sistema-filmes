@@ -1,10 +1,3 @@
-<!--
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 11/04/2019
-Objetivo sucinto do programa: templete da navbar
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
--->
-
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
@@ -16,18 +9,17 @@ Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educan
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<%=request.getContextPath()%>">Sistema
-				de filmes</a>
+			<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp#">Sistema
+				de Filmes</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">Inicio</a></li>
 				<li><a href="<%=request.getContextPath()%>/artista/listar">Cadastro
-						de artista</a></li>
+						de Artistas</a></li>
 				<li><a href="<%=request.getContextPath()%>/filme/pesquisar">Pesquisar
-						filmes</a></li>
+						Filmes</a></li>
 				<li><a href="<%=request.getContextPath()%>/participacao/filmes">Inserir
-						participação</a></li>
+						Participação</a></li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

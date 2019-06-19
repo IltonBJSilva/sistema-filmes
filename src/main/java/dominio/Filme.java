@@ -1,9 +1,3 @@
-/*
-Nome do autor: Ilton Batista da Silva Júnior
-Data de criação do arquivo: 10/04/2019
-Objetivo sucinto do programa: Cria uma classe Filmes
-Referência ao enunciado/origem do exercício: https://www.youtube.com/user/educandoweb/videos?view=0&sort=da&flow=grid
-*/
 package dominio;
 
 import java.io.Serializable;
@@ -19,18 +13,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_filme")
+@Table(name="tb_filme")
 public class Filme implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer codFilme;
 	private String titulo;
 	private Integer duracao;
 	private Integer ano;
-
-	@OneToMany(mappedBy = "filme")
+	
+	@OneToMany(mappedBy="filme")
 	private List<Participacao> participacoes;
 
 	public Filme() {
@@ -85,7 +79,7 @@ public class Filme implements Serializable {
 	public void setParticipacoes(List<Participacao> participacoes) {
 		this.participacoes = participacoes;
 	}
-
+	
 	public void addParticipacao(Participacao x) {
 		this.participacoes.add(x);
 		x.setFilme(this);
@@ -126,10 +120,11 @@ public class Filme implements Serializable {
 	}
 
 	public BigDecimal getCacheTotal() {
-		BigDecimal soma = new BigDecimal("0.20");
+		BigDecimal soma = new BigDecimal("0.00");
 		for (Participacao p : participacoes) {
 			soma = soma.add(p.getCachePago());
 		}
 		return soma;
 	}
+	
 }

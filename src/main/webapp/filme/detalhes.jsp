@@ -22,28 +22,24 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Filmes encontrados</h1>
+			<h1>Detalhes do filme</h1>
 		</div>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Título</th>
-					<th>Ação</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${itens}" var="x">
-					<tr>
-						<td>${x.codFilme}</td>
-						<td>${x.titulo}</td>
-						<td><a href="<%=request.getContextPath()%>/filme/detalhes?cod=${x.codFilme}" 
-						class="btn btn-primary btn-xs">Detalhes</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<div>
+			<ul class="list-group">
+				<li class="list-group-item">Código: ${item.codFilme}</li>
+				<li class="list-group-item">Título: ${item.titulo}</li>
+				<li class="list-group-item">Duração: ${item.duracao}</li>
+				<li class="list-group-item">Ano: ${item.ano}</li>
+				<li class="list-group-item">Gasto total em cache: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
+						type="currency" value="${item.cacheTotal}" /></li>
+			</ul>
+		</div>
+
+		<div>
+			<a href="<%=request.getContextPath()%>/filme/pesquisar"
+				class="btn btn-success">Nova Pesquisa</a>
+		</div>
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
